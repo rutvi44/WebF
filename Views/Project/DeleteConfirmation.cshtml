@@ -1,0 +1,13 @@
+﻿@model Project
+
+@{
+    ViewData["Title"] = "Delete Project";
+}
+
+<h6>Confirm Deletion</h6>
+<h3>@Model.Name (Created: @Model.DateCreated?.ToString("d"))</h3>
+
+<form method="post" asp-controller="Project" asp-action="ProcessDeleteRequestById" asp-route-id="@Model.ProjectId">
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a asp-controller="Project" asp-action="GetAllProjects" class="btn btn-primary">Cancel</a>
+</form>

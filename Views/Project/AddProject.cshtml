@@ -1,0 +1,14 @@
+﻿@model Project
+
+@{
+    ViewData["Title"] = "Add Project";
+}
+
+<form method="post" asp-controller="Project" asp-action="AddNewProject">
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <partial name="_ProjectFormPartial" model="@Model" />
+
+    <input class="btn btn-primary" type="submit" value="Add" />
+    <a asp-controller="Project" asp-action="GetAllProjects" class="btn btn-secondary">Cancel</a>
+</form>

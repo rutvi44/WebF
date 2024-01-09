@@ -1,0 +1,12 @@
+﻿@using ProjectManagement.DataAccess.Entities;
+@model Project;
+
+<div class="mb-3">
+        <label class="form-label" asp-for="Name">Name</label>
+        <input class="form-control" type="text" asp-for="Name" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label"  asp-for="DateCreated">Date created</label>
+        <input class="form-control" type="date" asp-for="DateCreated" value="@Model.DateCreated?.ToString("d")" />
+    </div>

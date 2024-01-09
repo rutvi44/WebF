@@ -1,0 +1,15 @@
+﻿@model ProjectManagement.Web.Components.TasksViewModel
+
+<h3>RIn Progress Tasks</h3>
+<h6>Showing at least @Model.NumberOfTasksToDisplay tasks</h6>
+<ol class="list-group list-group-numbered">
+    @for (var i = 0; i < Math.Min(Model.NumberOfTasksToDisplay, Model.Tasks!.Count); i++)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">@Model.Tasks[i].Description</div>
+                @Model.Tasks[i].Project?.Name
+            </div>
+        </li>
+    }
+</ol>
